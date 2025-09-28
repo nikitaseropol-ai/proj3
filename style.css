@@ -1,0 +1,250 @@
+/* Mobile First стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    padding: 0 15px;
+}
+
+/* Шапка */
+header {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    margin-right: 15px;
+}
+
+.site-title {
+    font-size: 20px;
+    color: #495057;
+}
+
+/* Навигация */
+nav {
+    background-color: #343a40;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu li {
+    width: 100%;
+    border-bottom: 1px solid #495057;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 0;
+    display: block;
+    text-align: center;
+}
+
+.menu a:hover {
+    background-color: #495057;
+}
+
+/* Основной контент */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.table-section {
+    order: 1;
+}
+
+.links-section {
+    order: 2;
+}
+
+.form-section {
+    order: 3;
+}
+
+/* Стили для секций */
+section {
+    margin: 20px 0;
+}
+
+h1, h2 {
+    margin-bottom: 15px;
+    color: #495057;
+}
+
+/* Стили для списка ссылок */
+.links-section ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.links-section li {
+    margin-bottom: 10px;
+    padding: 8px 0;
+}
+
+.links-section a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.links-section a:hover {
+    text-decoration: underline;
+}
+
+/* Таблица */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    overflow-x: auto;
+    display: block;
+}
+
+table th, table td {
+    padding: 8px 10px;
+    border: 1px solid #dee2e6;
+}
+
+table th {
+    background-color: #343a40;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+table tr:nth-child(odd) {
+    background-color: #e9ecef;
+}
+
+/* Форма */
+form {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Подвал */
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Стили для планшетов и десктопов */
+@media (min-width: 768px) {
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    .menu {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .menu li {
+        width: auto;
+        border-bottom: none;
+        margin-right: 20px;
+    }
+
+    .menu a {
+        padding: 15px 20px;
+        text-align: left;
+    }
+
+    .content-wrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .table-section {
+        order: 0;
+        width: 100%;
+    }
+
+    .links-section {
+        order: 0;
+        width: 48%;
+    }
+
+    .form-section {
+        order: 0;
+        width: 48%;
+    }
+
+    table {
+        display: table;
+    }
+
+    button {
+        width: auto;
+    }
+}
