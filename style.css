@@ -9,9 +9,6 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
 .container {
@@ -23,26 +20,29 @@ body {
 header {
     background-color: #f8f9fa;
     padding: 20px 0;
+    width: 100%;
 }
 
 .header-content {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
+    text-align: center;
 }
 
 .logo {
-    margin-right: 15px;
+    margin-bottom: 10px;
 }
 
 .site-title {
-    font-size: 20px;
+    font-size: 24px;
     color: #495057;
 }
 
 /* Навигация */
 nav {
     background-color: #343a40;
+    width: 100%;
 }
 
 .menu {
@@ -52,14 +52,13 @@ nav {
 }
 
 .menu li {
-    width: 100%;
-    border-bottom: 1px solid #495057;
+    margin: 5px 0;
 }
 
 .menu a {
     color: white;
     text-decoration: none;
-    padding: 15px 0;
+    padding: 10px;
     display: block;
     text-align: center;
 }
@@ -70,29 +69,22 @@ nav {
 
 /* Основной контент */
 main {
-    flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-.content-wrapper {
-    display: flex;
-    flex-direction: column;
-}
-
-.table-section {
+#table-section {
     order: 1;
 }
 
-.links-section {
+#links-section {
     order: 2;
 }
 
-.form-section {
+#form-section {
     order: 3;
 }
 
-/* Стили для секций */
 section {
     margin: 20px 0;
 }
@@ -102,23 +94,22 @@ h1, h2 {
     color: #495057;
 }
 
-/* Стили для списка ссылок */
-.links-section ul {
-    list-style: none;
-    margin-bottom: 30px;
+/* Список ссылок */
+ul, ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
 
-.links-section li {
+li {
     margin-bottom: 10px;
-    padding: 8px 0;
 }
 
-.links-section a {
+a {
     color: #007bff;
     text-decoration: none;
 }
 
-.links-section a:hover {
+a:hover {
     text-decoration: underline;
 }
 
@@ -126,13 +117,12 @@ h1, h2 {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
-    overflow-x: auto;
-    display: block;
+    margin-bottom: 20px;
 }
 
 table th, table td {
-    padding: 8px 10px;
+    padding: 8px;
+    text-align: left;
     border: 1px solid #dee2e6;
 }
 
@@ -145,16 +135,11 @@ table tr:nth-child(even) {
     background-color: #f8f9fa;
 }
 
-table tr:nth-child(odd) {
-    background-color: #e9ecef;
-}
-
 /* Форма */
 form {
     background-color: #f8f9fa;
     padding: 20px;
     border-radius: 5px;
-    margin: 20px 0;
 }
 
 .form-group {
@@ -181,7 +166,6 @@ button {
     padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
-    width: 100%;
 }
 
 button:hover {
@@ -193,58 +177,48 @@ footer {
     background-color: #343a40;
     color: white;
     padding: 20px 0;
+    width: 100%;
     text-align: center;
 }
 
-/* Стили для планшетов и десктопов */
+/* Планшетная версия */
 @media (min-width: 768px) {
-    .container {
-        max-width: 960px;
-        margin: 0 auto;
+    .header-content {
+        flex-direction: row;
+        text-align: left;
     }
-
+    
+    .logo {
+        margin-bottom: 0;
+        margin-right: 15px;
+    }
+    
     .menu {
         flex-direction: row;
         justify-content: flex-start;
     }
-
+    
     .menu li {
-        width: auto;
-        border-bottom: none;
-        margin-right: 20px;
+        margin: 0 20px 0 0;
     }
-
-    .menu a {
-        padding: 15px 20px;
-        text-align: left;
+    
+    main {
+        display: block;
     }
-
-    .content-wrapper {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
+    
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
     }
+}
 
-    .table-section {
-        order: 0;
-        width: 100%;
+/* Десктопная версия */
+@media (min-width: 1024px) {
+    .menu {
+        justify-content: center;
     }
-
-    .links-section {
-        order: 0;
-        width: 48%;
-    }
-
-    .form-section {
-        order: 0;
-        width: 48%;
-    }
-
-    table {
-        display: table;
-    }
-
-    button {
-        width: auto;
+    
+    table th, table td {
+        padding: 12px 15px;
     }
 }
