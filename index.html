@@ -3,8 +3,290 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>сайтик 3</title>
-    <link rel="stylesheet" href="style.css">
+    <title>сайтик 2</title>
+    <style>
+        /* Mobile First стили (для смартфонов) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 100%;
+            padding: 0 15px;
+        }
+
+        /* Шапка - мобильная версия */
+        header {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            width: 100%;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo {
+            margin-bottom: 10px;
+        }
+
+        .site-title {
+            font-size: 20px;
+            color: #495057;
+        }
+
+        /* Навигация - мобильная версия (вертикальная) */
+        nav {
+            background-color: #343a40;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu li {
+            margin: 5px 0;
+            text-align: center;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: #495057;
+        }
+
+        /* Основной контент - мобильная версия */
+        main {
+            display: flex;
+            flex-direction: column;
+            padding: 20px 0;
+        }
+
+        /* Изменение порядка секций только для мобильных */
+        #links-section {
+            order: 2;
+        }
+
+        #table-section {
+            order: 1;
+        }
+
+        #form-section {
+            order: 3;
+        }
+
+        section {
+            background: white;
+            margin: 10px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            margin-bottom: 15px;
+            color: #495057;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+
+        /* Список ссылок */
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding: 5px 0;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        /* Таблица */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        table th, table td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #dee2e6;
+        }
+
+        table th {
+            background-color: #343a40;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        table tr:hover {
+            background-color: #e9ecef;
+        }
+
+        /* Форма */
+        form {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #dee2e6;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #495057;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Подвал */
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Планшетная и десктопная версия (768px и выше) */
+        @media (min-width: 768px) {
+            .header-content {
+                flex-direction: row;
+                text-align: left;
+                justify-content: flex-start;
+            }
+            
+            .logo {
+                margin-bottom: 0;
+                margin-right: 20px;
+            }
+            
+            .site-title {
+                font-size: 24px;
+            }
+            
+            .menu {
+                flex-direction: row;
+                justify-content: flex-start;
+            }
+            
+            .menu li {
+                margin: 0 15px 0 0;
+            }
+            
+            .menu a {
+                padding: 10px 15px;
+            }
+            
+            /* Возвращаем естественный порядок секций для планшетов и десктопов */
+            main {
+                display: block;
+            }
+            
+            table {
+                font-size: 16px;
+            }
+            
+            table th, table td {
+                padding: 10px 12px;
+            }
+        }
+
+        /* Десктопная версия (1024px и выше) */
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            
+            .header-content {
+                justify-content: flex-start;
+            }
+            
+            .menu {
+                justify-content: center;
+            }
+            
+            .menu li {
+                margin: 0 20px;
+            }
+            
+            section {
+                margin: 20px 0;
+                padding: 30px;
+            }
+            
+            table th, table td {
+                padding: 12px 15px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -179,4 +461,3 @@
     </footer>
 </body>
 </html>
-
